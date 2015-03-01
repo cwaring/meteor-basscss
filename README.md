@@ -1,10 +1,13 @@
-# Basscss packaged for Meteor
+# Basscss for Meteor
 
-Low-level CSS toolkit
+Low-level CSS toolkit by [Brent Jackson](https://github.com/jxnblk/basscss.git)
 
 http://basscss.com
 
-Framework by [Brent Jackson](https://github.com/jxnblk/basscss.git)
+#### Install
+```
+meteor add kit:basscss
+```
 
 ---
 
@@ -48,13 +51,7 @@ http://basscss.com/docs/principles
 
 ---
 
-## Usage
-
-```
-meteor install cwaring:basscss
-```
-
-## Package development
+## Package Development
 
 ```
 npm install
