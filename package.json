@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "basscss": "^5.0.0",
+    "basscss": "^5.0.1",
     "basswork": "^1.2.0"
   },
   "scripts": {
