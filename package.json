@@ -1,7 +1,7 @@
 {
   "devDependencies": {
-    "basscss": "^5.2.0",
-    "cssnext": "^1.2.1"
+    "basscss": "^6.0.2",
+    "cssnext": "^1.3.0"
   },
   "scripts": {
     "update:cp": "cp node_modules/basscss/css/basscss.css client/basscss.css",
