@@ -1,6 +1,6 @@
 /*
 
-    Basscss v6.0.1
+    Basscss v6.1.6
     Low-level CSS toolkit
     http://basscss.com
 
@@ -8,13 +8,7 @@
 
 
 
-body, button { margin: 0 }
-
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-}
-
+body { margin: 0 }
 img { max-width: 100% }
 svg { max-height: 100% }
 
@@ -22,7 +16,9 @@ input,
 select,
 textarea,
 fieldset {
+  font-family: inherit;
   font-size: 1rem;
+  box-sizing: border-box;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -39,7 +35,6 @@ input[type=tel],
 input[type=time],
 input[type=url],
 input[type=week] {
-  box-sizing: border-box;
   height: 2.25rem;
   padding: .5rem .5rem;
   vertical-align: middle;
@@ -47,7 +42,6 @@ input[type=week] {
 }
 
 select {
-  box-sizing: border-box;
   line-height: 1.75;
   padding: .5rem .5rem;
 }
@@ -58,7 +52,6 @@ select:not([multiple]) {
 }
 
 textarea {
-  box-sizing: border-box;
   line-height: 1.75;
   padding: .5rem .5rem;
 }
@@ -79,12 +72,12 @@ textarea {
 
 button,
 .button {
+  font-family: inherit;
   font-size: inherit;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  box-sizing: border-box;
   line-height: 1.125rem;
   padding: .5rem 1rem;
   margin: 0;
@@ -94,10 +87,13 @@ button,
   -webkit-appearance: none;
 }
 
+button,
 button::after,
 button::before,
+.button,
 .button::after,
 .button::before {
+  box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -143,7 +139,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5em;
 }
 
-p, dl, ol, ul {
+p {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dl, ol, ul {
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -166,17 +168,15 @@ hr {
 }
 
 blockquote {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
 }
-  blockquote,
-  blockquote p {
-    font-size: 1.25rem;
-    font-style: italic;
-  }
+
+blockquote,
+blockquote p {
+  font-size: 1.25rem;
+  font-style: italic;
+}
 
 h1, .h1 { font-size: 2rem }
 h2, .h2 { font-size: 1.5rem }
@@ -193,6 +193,8 @@ h6, .h6 { font-size: .75rem }
 .inline       { display: inline }
 .block        { display: block }
 .inline-block { display: inline-block }
+.table        { display: table }
+.table-cell   { display: table-cell }
 
 .overflow-hidden { overflow: hidden }
 .overflow-scroll { overflow: scroll }
@@ -224,6 +226,14 @@ h6, .h6 { font-size: .75rem }
 .justify      { text-align: justify }
 
 .nowrap { white-space: nowrap }
+.break-word { word-wrap: break-word }
+
+.truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .m0  { margin:        0 }
 .mt0 { margin-top:    0 }
@@ -653,12 +663,6 @@ hr {
   color: white;
   background-color: #0074d9;
   border-radius: 3px;
-  -webkit-transition-duration: .05s;
-          transition-duration: .05s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-property: box-shadow, background-color;
-          transition-property: box-shadow, background-color;
 }
 
 .button:hover {
@@ -693,35 +697,51 @@ hr {
   border-radius: 3px;
 }
 
-.field-light:focus {
+.field-light:focus,
+.field-light.is-focused {
   outline: none;
   border-color: #0074d9;
   box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.5);
 }
 
-.field-light:disabled {
+.field-light:disabled,
+.field-light.is-disabled {
   background-color: rgba(0,0,0,.125);
   opacity: .5;
 }
 
-.field-light:read-only:not(select) {
+.field-light:read-only:not(select),
+.field-light.is-read-only {
   background-color: rgba(0,0,0,.125);
 }
 
-.field-light:invalid {
-  border-color: #ff4136;
-}
 
 .field-light.is-success {
   border-color: #2ecc40;
+}
+
+.field-light.is-success:focus,
+.field-light.is-success.is-focused {
+  box-shadow: 0 0 0 2px rgba(46, 204, 64, 0.5);
 }
 
 .field-light.is-warning {
   border-color: #ffdc00;
 }
 
+.field-light.is-warning:focus,
+.field-light.is-warning.is-focused {
+  box-shadow: 0 0 0 2px rgba(255, 220, 0, 0.5);
+}
+
+.field-light:invalid,
 .field-light.is-error {
   border-color: #ff4136;
+}
+
+.field-light.is-error:focus,
+.field-light.is-error.is-focused {
+  box-shadow: 0 0 0 2px rgba(255, 65, 54, 0.5);
 }
 
 .field-dark {
@@ -757,20 +777,29 @@ hr {
   background-color: rgba(255,255,255,.25);
 }
 
-.field-dark:invalid {
-  border-color: #ff4136;
-}
-
 .field-dark.is-success {
   border-color: #2ecc40;
+}
+
+.field-dark.is-success:focus {
+  box-shadow: 0 0 0 2px rgba(46, 204, 64, 0.5);
 }
 
 .field-dark.is-warning {
   border-color: #ffdc00;
 }
 
+.field-dark.is-warning:focus {
+  box-shadow: 0 0 0 2px rgba(255, 220, 0, 0.5);
+}
+
+.field-dark:invalid,
 .field-dark.is-error {
   border-color: #ff4136;
+}
+
+.field-dark.is-error:focus {
+  box-shadow: 0 0 0 2px rgba(255, 65, 54, 0.5);
 }
 
 input[type=range] {
@@ -1053,7 +1082,6 @@ input[type=range] {
 .fuchsia { color: #f012be }
 .purple  { color: #b10dc9 }
 .maroon  { color: #85144b }
-
 .bg-black, .bg-dark-gray   { background-color: #111 }
 .bg-gray, .bg-mid-gray     { background-color: #aaa }
 .bg-silver, .bg-light-gray { background-color: #ddd }
@@ -1078,6 +1106,10 @@ input[type=range] {
 .bg-darken-2 { background-color: rgba(0,0,0,.125) }
 .bg-darken-3 { background-color: rgba(0,0,0,.25) }
 .bg-darken-4 { background-color: rgba(0,0,0,.5) }
+.border-black  { border-color: #111 }
+.border-gray   { border-color: #aaa }
+.border-silver { border-color: #ddd }
+.border-white  { border-color: #fff }
 
 .border-aqua  { border-color: #7fdbff }
 .border-blue  { border-color: #0074d9 }
@@ -1094,14 +1126,10 @@ input[type=range] {
 .border-purple  { border-color: #b10dc9 }
 .border-maroon  { border-color: #85144b }
 
-.border-black  { border-color: #111 }
-.border-gray   { border-color: #aaa }
-.border-silver { border-color: #ddd }
-.border-white  { border-color: #fff }
-
 .border-darken-1 { border-color: rgba(0,0,0,.0625) }
 .border-darken-2 { border-color: rgba(0,0,0,.125) }
 .border-darken-3 { border-color: rgba(0,0,0,.25) }
 .border-darken-4 { border-color: rgba(0,0,0,.5) }
 .muted { opacity: .5 }
+.color-inherit { color: inherit }
 

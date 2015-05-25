@@ -1,6 +1,6 @@
 Package.describe({
   name: 'kit:basscss',
-  version: '6.0.2',
+  version: '6.1.6',
   summary: 'Basscss packaged for Meteor',
   git: 'https://github.com/cwaring/meteor-basscss.git',
   documentation: 'README.md'
