@@ -1,72 +1,67 @@
 # Basscss for Meteor
 
-Low-level CSS toolkit by [Brent Jackson](https://github.com/jxnblk/basscss.git)
+Low-level CSS toolkit <http://basscss.com> by [Brent Jackson](https://github.com/jxnblk/basscss.git)
 
-http://basscss.com
+Documentation: <http://basscss.com/docs>
 
-#### Install
-```
-meteor add kit:basscss
-```
 
----
+## Lightning-Fast Modular CSS with No Side Effects
 
-## Modular CSS toolkit based on OOCSS principles
+Basscss is a lightweight collection of base element styles and immutable utilities designed for speed, clarity, performance, and scalability.
 
-Basscss is a lightweight collection of base element styles, utilities, layout modules, and color styles designed for speed, performance, and scalability.
 
 ## Features
 
-### Designed for Design
-With simple, humanized naming conventions,
-Basscss is quick to internalize and easy to wrap your head around,
-while striking a balance between consistency and flexibility.
+### Code with Confidence
 
-### Responsive by Default
-The web is inherently flexible, Basscss doesn't break that tradition
-and provides lightweight solutions to design for all devices.
+Using clear, humanized naming conventions, Basscss is quick to internalize
+and easy to reason about while speeding up development time with more scalable,
+more readable code.
 
-### Unobtrusive
-Basscss doesn't dictate what your site should look like.
-With extensible base styles and variables for typography, white space, breakpoints, and UI elements,
-customizing the look and feel is easy.
+### No Side Effects
 
-### Mix and Match
-With modular styles that work like building blocks,
-Basscss provides a foundation of reusable and inter-operable styles
-for greater freedom when designing in the browser.
+Things behave exactly as expected with immutable utilities
+and styles that follow the open/closed principle
+to help prevent common pitfalls with CSS.
 
-Learn more at http://basscss.com
+### Composable
 
-## Documentation
-View the full documentation with inline examples:
+Reusable, interoperable styles
+work like building blocks to lay the foundation for any stylesheet
+and can be mixed and matched in any number of combinations.
 
-http://basscss.com/docs
+## Designed for Design
 
-### Guide to Web Design Basics
-http://basscss.com/docs/guide
+Basscss strikes a balance between consistency and flexibility
+to allow for rapid prototyping and quick iterative changes
+when designing in the browser.
 
-### Design Principles
-http://basscss.com/docs/principles
+## Responsive by Default
+
+Basscss provides lightweight, performant styles
+and flexible utilities to design for any device
+and to help reduce boilerplate in stylesheets.
+
+## Unassuming
+
+Modular and customizable base, typography, layout, and color styles
+don't dictate what things should look like
+and play well with other stylesheets and frameworks.
+
+[Read More](http://basscss.com)
 
 ---
 
-## Package Development
+## Contributing
 
-```
-npm install
-```
+Please file an issue before submitting a pull request.
+If you're making changes to a module, please follow the
+[design principles](http://www.basscss.com/docs/reference/principles/).
 
-```
-npm run update:build
-```
-
-### Contributing
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Folder Structure
+- `src`: CSS4 source files
+- `css`: Processed CSS files for browser compatibility
+- `scripts`: Compilation and build scripts
 
 ---
 
