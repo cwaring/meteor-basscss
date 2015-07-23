@@ -1,8 +1,10 @@
 # Basscss for Meteor
 
-Low-level CSS toolkit <http://basscss.com> by [Brent Jackson](https://github.com/jxnblk/basscss.git)
+Low-level CSS toolkit <http://basscss.com> by [Brent Jackson](https://github.com/basscss/basscss)
 
 Documentation: <http://basscss.com/docs>
+
+If you want to compile a custom version of Basscss in realtime use [kit:cssnext-basscss](https://github.com/cwaring/meteor-cssnext-basscss)
 
 
 ## Lightning-Fast Modular CSS with No Side Effects

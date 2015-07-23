@@ -1,6 +1,6 @@
 Package.describe({
   name: 'kit:basscss',
-  version: '7.0.0',
+  version: '7.0.2',
   summary: 'Basscss packaged for Meteor',
   git: 'https://github.com/cwaring/meteor-basscss.git',
   documentation: 'README.md'
@@ -8,5 +8,5 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
-  api.addFiles('client/basscss.css', 'client');
+  api.addFiles('lib/css/basscss.css', 'client');
 });
